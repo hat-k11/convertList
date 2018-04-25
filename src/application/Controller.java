@@ -66,13 +66,9 @@ public class Controller {
 			InputStreamReader isr = new InputStreamReader(fis,"UTF-8");
 			BufferedReader br = new BufferedReader(isr);
 			
-			System.out.println(inputFile.getPath().toString());
-			
 			FileOutputStream fos = new FileOutputStream(outputFile);
 			OutputStreamWriter osw = new OutputStreamWriter(fos,"UTF-8");
 			BufferedWriter bw = new BufferedWriter(osw);
-			
-			System.out.println(outputFile.getPath().toString());
 			
 			String str;
 			//String uHome = System.getProperty("user.home");
