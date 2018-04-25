@@ -34,7 +34,16 @@ public class Controller {
 	}
 	
 	public void onOutputOpenButtonClicked(ActionEvent aEvent){
+		FileChooser fc = new FileChooser();
+		fc.setTitle("ƒtƒ@ƒCƒ‹‚ð•Û‘¶");
+		fc.getExtensionFilters().addAll(
+				new FileChooser.ExtensionFilter("Playlist File", "*.m3u8"));
 		
+		File file = fc.showSaveDialog(null);
+		
+		if(file != null){
+			OutputLabel.setText(file.getPath().toString());
+		}
 	}
 	
 	public void onStartButtonClicked(ActionEvent aEvent){
