@@ -71,14 +71,18 @@ public class Controller {
 			BufferedWriter bw = new BufferedWriter(osw);
 			
 			String str;
-			//String uHome = System.getProperty("user.home");
+			String uHome = System.getProperty("user.home");
+			uHome = uHome.replaceAll("\\\\", "\\\\\\\\");
+			uHome = uHome+"\\\\Music\\\\Media Go\\\\";
+			
 			while((str = br.readLine()) != null){
-				//xxxx‚É‚Íb’è“I‚É©•ª‚Ì–¼‘O‚ª“ü‚Á‚Ä‚é
-				str = str.replaceAll("C:\\\\Users\\\\xxxx\\\\Music\\\\Media Go\\\\", "");
+				str = str.replaceAll(uHome, "");
 				bw.write(str+"\n");
 			}
+			
 			br.close();
 			bw.close();
+			
 			MessageLabel.setText("®Œ`‚µ‚Ü‚µ‚½");
 		}catch(IOException e){
 			e.printStackTrace();
