@@ -30,6 +30,7 @@
                </children>
             </GridPane>
             <Button fx:id="StartButton" layoutX="311.0" layoutY="325.0" mnemonicParsing="false" onAction="#onStartButtonClicked" prefHeight="33.0" prefWidth="98.0" text="整形開始" />
+            <Label fx:id="MessageLabel" layoutX="81.0" layoutY="424.0" prefHeight="21.0" prefWidth="554.0" />
          </children>
       </AnchorPane>
    </center>
