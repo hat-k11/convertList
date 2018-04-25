@@ -24,8 +24,8 @@
                   <Button fx:id="InputOpenButton" mnemonicParsing="false" onAction="#onInputOpenButtonClicked" prefHeight="31.0" prefWidth="107.0" text="開く" GridPane.columnIndex="2" />
                   <Label prefHeight="21.0" prefWidth="92.0" text="入力" textAlignment="CENTER" />
                   <Label text="出力" GridPane.rowIndex="1" />
-                  <Label fx:id="InputLabel" prefHeight="21.0" prefWidth="428.0" GridPane.columnIndex="1" />
-                  <Label fx:id="OutputLabel" prefHeight="21.0" prefWidth="426.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="InputLabel" prefHeight="21.0" prefWidth="428.0" style="-fx-background-color: white;" GridPane.columnIndex="1" />
+                  <Label fx:id="OutputLabel" prefHeight="21.0" prefWidth="426.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Button fx:id="OutputOpenButton" mnemonicParsing="false" onAction="#onOutputOpenButtonClicked" prefHeight="31.0" prefWidth="93.0" text="開く" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                </children>
             </GridPane>
