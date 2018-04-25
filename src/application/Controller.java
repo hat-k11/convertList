@@ -60,26 +60,36 @@ public class Controller {
 		}
 	}
 	
-	public void onStartButtonClicked(ActionEvent aEvent){
+	public void onStartButtonClicked(ActionEvent aEvent){	
 		try{
 			FileInputStream fis = new FileInputStream(inputFile);
-			InputStreamReader isr = new InputStreamReader(fis);
+			InputStreamReader isr = new InputStreamReader(fis,"UTF-8");
 			BufferedReader br = new BufferedReader(isr);
 			
+			System.out.println(inputFile.getPath().toString());
+			
 			FileOutputStream fos = new FileOutputStream(outputFile);
-			OutputStreamWriter osw = new OutputStreamWriter(fos);
+			OutputStreamWriter osw = new OutputStreamWriter(fos,"UTF-8");
 			BufferedWriter bw = new BufferedWriter(osw);
 			
+			System.out.println(outputFile.getPath().toString());
+			
 			String str;
-			String uHome = System.getProperty("user.home");
+			//String uHome = System.getProperty("user.home");
 			while((str = br.readLine()) != null){
-				str = str.replaceAll(uHome+"\\\\Music\\\\Media Go\\\\", "");
+				//xxxxには暫定的に自分の名前が入ってる
+				str = str.replaceAll("C:\\\\Users\\\\xxxx\\\\Music\\\\Media Go\\\\", "");
 				bw.write(str+"\n");
 			}
-			MessageLabel.setText("整形しました！");
+			br.close();
+			bw.close();
+			MessageLabel.setText("整形しました");
 		}catch(IOException e){
 			e.printStackTrace();
 			MessageLabel.setText("ファイルの入出力で例外を吐きました");
+		}catch(NullPointerException e){
+			e.printStackTrace();
+			MessageLabel.setText("ヌルポを吐きました");
 		}
 	}
 }
